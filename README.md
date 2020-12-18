@@ -92,7 +92,7 @@ public ActionResult BugTabStateUpdate(BugReportTab bugreport)
 }
 ```
 
-I also had to write a JavaScript Ajax function to do the sending of state of the tab to the controller method. I used \jQuery for this.
+I also had to write a JavaScript Ajax function to do the sending of state of the tab to the controller method. A bit of jQuery made this pretty easy.
 
 ```
 <script>
