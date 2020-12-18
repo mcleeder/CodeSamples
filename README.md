@@ -139,7 +139,7 @@ $("#bug_icon_btn_rightarrow").on("click", { "tab_open": "false" }, BugTabStateTo
 
 ### Edit Users
 
-This was a front end story. The page that allowed users to edit their own details needed to have its appearance brought in line with other forms on the site. The story for this provided me with a design and I mostly wrote some HTML to make it match those specifications. The only tricky part was a requirement that a default image from the database be displayed if the user had not uploaded one. Or if the user was a cast member, that photo should be used. I accomplished this by adding the following bit of code to the existing view method.
+This was a front end story. The page that allowed users to edit their own details needed to have its appearance brought in line with other forms on the site. The story for this provided me with a design and I mostly wrote some HTML to make it match those specifications. The only tricky part was a requirement that a default image from the database be displayed if the user had not uploaded one. Or if the user was a cast member, that photo should be used. I accomplished this by adding the following bit of code to the existing controller method.
 
 ```c#
 //Get CastMember photo if there is one, otherwise use default photo.
