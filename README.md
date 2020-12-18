@@ -7,7 +7,7 @@ At The Tech Academy, for the last two weeks in every language program we work in
 
 ### Delete users
 
-My first story was to add the ability to delete users from the admin page, while preserving any sorts or filters used on the page. It was a fairly straightforward task with the main hurdle being familiarizing myself with the existing user management system and the database.
+This story task was to add the ability to delete users from the admin page, while preserving any sorts or filters used on the page. It was a fairly straightforward task with the main hurdle being familiarizing myself with the existing user management system and the database. The implementation on the front end was just a delete button and a confirmation modal.
 
 ```
 /// <summary>
