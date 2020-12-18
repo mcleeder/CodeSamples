@@ -57,3 +57,67 @@ public async Task<ActionResult> UserList(string id)
 	}
 }
 ```
+
+### Admin Overlay
+
+While building the app, we had an admin overlay for reporting bugs. My task for this story was to make the opened/closed state of the tab persist through navigation. I did this with an admin controller method that would write the state of the tab to an already existing admin settings json file.
+
+```
+/// <summary>
+/// Stores the state of the Bug Report widget in AdminSettings.json
+/// </summary>
+/// <param name="bugreport">BugReportTab object</param>
+/// <returns></returns>
+[HttpPost]
+public ActionResult BugTabStateUpdate(BugReportTab bugreport)
+{
+	string filepath = Server.MapPath(Url.Content("~/AdminSettings.json"));
+
+	//Get the current settings
+	AdminSettings currentAdminSettings = AdminSettingsReader.CurrentSettings();
+
+	//Insert our new value
+	currentAdminSettings.BugReport = bugreport;
+
+	//Convert to json
+	string newJson = JsonConvert.SerializeObject(currentAdminSettings, Formatting.Indented);
+
+	//Write to file
+	using (StreamWriter writer = new StreamWriter(filepath))
+	{
+		writer.Write(newJson);
+	}
+	//make Ajax happy with a success return
+	return Json(new { success = true, message = $"tab_open: {bugreport.tab_open}" });
+}
+```
+
+I also had to write a JavaScript Ajax function to do the sending of state of the tab to the controller method. I used \jQuery for this.
+
+```
+<script>
+//Send the state of the bug report tab to the back-end
+	function BugTabStateToJson(tabstate) {
+
+	var bugtab = { "tab_open": tabstate.data.tab_open };
+
+	$.ajax({
+	type: 'POST',
+	url: '@Url.Action("BugTabStateUpdate", "Admin")',
+	data: JSON.stringify(bugtab),
+	contentType: 'application/json; charset=utf-8',
+	dataType: 'json',
+	success: function (message) {
+		console.log(message);
+	},
+	error: function (XMLHttpRequest, textStatus, errorThrown) {
+		console.log(`Request: ${XMLHttpRequest.toString()}\nStatus: ${textStatus}\nError:${errorThrown}`);
+	}
+	});
+	return false;
+}
+$("#bug_icon_btn_leftarrow").on("click", { "tab_open": "true" }, BugTabStateToJson);
+$("#bug_icon_btn_rightarrow").on("click", { "tab_open": "false" }, BugTabStateToJson);
+</script>
+
+```
