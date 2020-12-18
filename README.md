@@ -6,6 +6,7 @@
 At The Tech Academy, for the last two weeks in every language program we work in teams on a shared project. In the C# program, that app was an ASP.NET MVC site for a local theater group. It being Covid-time, we worked remotely. We used Slack, Google Meet, and daily scrum meetings to maintain group cohesion. I was able to work on several front end and back end stories.
 
 Back End:
+
 -[Delete Users](https://github.com/mcleeder/CodeSamples/blob/main/README.md#delete-users)
 
 -[Admin Overlay](https://github.com/mcleeder/CodeSamples/blob/main/README.md#admin-overlay)
@@ -16,6 +17,8 @@ Front End:
 -[Edit Users](https://github.com/mcleeder/CodeSamples/blob/main/README.md#edit-users)
 
 -[Templates View](https://github.com/mcleeder/CodeSamples/blob/main/README.md#templates-view)
+
+-[Form Bug Fix](https://github.com/mcleeder/CodeSamples/blob/main/README.md#form-bug-fix)
 
 ### Delete users
 
@@ -154,3 +157,7 @@ using (var db = new ApplicationDbContext())
 ### Templates View
 
 For this front end story, I was given the task of creating a new admin view to showcase various site templates for reference by other developers. It was a straightforward view method and some simple HTML. It was my first story in the project and I took it on because it was a good one for scoping out the rest of the web app.
+
+### Form Bug Fix
+
+For this front end story, I was given a story to fix a certain form that crashed the site when visited. The solution ended up that another dev had made a change to the model that form used. The input in question indicated if a theater production was currently showing, the other dev added some logic so that users wouldn't have to supply that info. So the form was trying to get a field that no longer accepted user input and was failing. Once I figured all that out, it was simple to remove the field.
