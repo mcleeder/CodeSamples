@@ -5,9 +5,11 @@
 
 At The Tech Academy, for the last two weeks in every language program we work in teams on a shared project. In the C# program, that app was an ASP.NET MVC site for a local theater group. It being Covid-time, we worked remotely. We used Slack, Google Meet, and daily scrum meetings to maintain group cohesion. I was able to work on several front end and back end stories.
 
-[Delete Users](https://github.com/mcleeder/CodeSamples/blob/main/README.md#delete-users)
+-[Delete Users](https://github.com/mcleeder/CodeSamples/blob/main/README.md#delete-users)
 
-[Admin Overlay](https://github.com/mcleeder/CodeSamples/blob/main/README.md#admin-overlay)
+-[Admin Overlay](https://github.com/mcleeder/CodeSamples/blob/main/README.md#admin-overlay)
+
+-[Templates View](https://github.com/mcleeder/CodeSamples/blob/main/README.md#templates-view)
 
 ### Delete users
 
@@ -125,3 +127,24 @@ $("#bug_icon_btn_rightarrow").on("click", { "tab_open": "false" }, BugTabStateTo
 </script>
 
 ```
+
+### Edit Users
+
+This was a front end story. The page that allowed users to edit their own details needed to have its appearance brought in line with other forms on the site. The story for this provided me with a design and I mostly wrote some HTML to make it match those specifications. The only tricky part was a requirement that a default image from the database be displayed if the user had not uploaded one. Or if the user was a cast member, that photo should be used.
+
+```
+//Get CastMember photo if there is one, otherwise use default photo.
+using (var db = new ApplicationDbContext())
+{
+    //get the value from the db, should only be one
+    //grab first result, and convert it to int
+    //if conversion fails, defaults to the current generic PhotoId 9
+    model.PhotoId = (from s in db.CastMembers
+                    where s.CastMemberID == user.CastMemberUserID
+                    select s.PhotoId).FirstOrDefault().GetValueOrDefault(9);
+}
+```
+
+### Templates View
+
+For this front end story, I was given the task of creating a new admin view to showcase various site templates for reference by other developers. It was a straightforward view method and some simple HTML. It was my first story in the project and I took it on because it was a good one for scoping out the rest of the web app.
