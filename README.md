@@ -24,7 +24,7 @@ Front End:
 
 This story task was to add the ability to delete users from the admin page, while preserving any sorts or filters used on the page. It was a fairly straightforward task with the main hurdle being familiarizing myself with the existing user management system and the database. The implementation on the front end was just a delete button and a confirmation modal.
 
-```
+```c#
 /// <summary>
 /// Delete a User from the Admin/UserList
 /// </summary>
@@ -77,7 +77,7 @@ public async Task<ActionResult> UserList(string id)
 
 While building the app, we had an admin overlay for reporting bugs. My task for this story was to make the opened/closed state of the tab persist through navigation. I did this with an admin controller method that would write the state of the tab to an already existing admin settings json file.
 
-```
+```c#
 /// <summary>
 /// Stores the state of the Bug Report widget in AdminSettings.json
 /// </summary>
@@ -109,7 +109,7 @@ public ActionResult BugTabStateUpdate(BugReportTab bugreport)
 
 I also had to write a JavaScript Ajax function to do the sending of state of the tab to the controller method. A bit of jQuery made this pretty easy.
 
-```
+```javascript
 <script>
 //Send the state of the bug report tab to the back-end
 	function BugTabStateToJson(tabstate) {
@@ -141,7 +141,7 @@ $("#bug_icon_btn_rightarrow").on("click", { "tab_open": "false" }, BugTabStateTo
 
 This was a front end story. The page that allowed users to edit their own details needed to have its appearance brought in line with other forms on the site. The story for this provided me with a design and I mostly wrote some HTML to make it match those specifications. The only tricky part was a requirement that a default image from the database be displayed if the user had not uploaded one. Or if the user was a cast member, that photo should be used. I accoplished this by adding the following bit of code to the existing view method.
 
-```
+```c#
 //Get CastMember photo if there is one, otherwise use default photo.
 using (var db = new ApplicationDbContext())
 {
