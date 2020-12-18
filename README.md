@@ -5,6 +5,9 @@
 
 At The Tech Academy, for the last two weeks in every language program we work in teams on a shared project. In the C# program, that app was an ASP.NET MVC site for a local theater group. It being Covid-time, we worked remotely. We used Slack, Google Meet, and daily scrum meetings to maintain group cohesion. I was able to work on several front end and back end stories.
 
+[Delete Users](https://github.com/mcleeder/CodeSamples/blob/main/README.md#admin-overlay)
+Admin Overlay
+
 ### Delete users
 
 This story task was to add the ability to delete users from the admin page, while preserving any sorts or filters used on the page. It was a fairly straightforward task with the main hurdle being familiarizing myself with the existing user management system and the database. The implementation on the front end was just a delete button and a confirmation modal.
