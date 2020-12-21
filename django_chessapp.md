@@ -140,6 +140,8 @@ def render_final_position(fen):
                 index_c += try_parse(x)[0]
     return board
 ```
+
+```python
 chess_p = {
     'r': """<i class="fas fa-chess-rook text-dark"></i>""",
     'R': """<i class="fas fa-chess-rook text-light"></i>""",
@@ -155,6 +157,4 @@ chess_p = {
     'P': """<i class="fas fa-chess-pawn text-light"></i>""",
     '': """&nbsp;"""
 }
-```python
-
 ```
