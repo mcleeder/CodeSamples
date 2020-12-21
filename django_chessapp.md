@@ -7,7 +7,7 @@ At The Tech Academy, for the last two weeks in every language program we work in
 
 A lot of the coding was just setting up models and views in django. If you want to see the whole show, you can [click here](https://github.com/mcleeder/ChessFanSite/tree/main/ChessApp). Following that link will take you to the code I worked on for the site, but not the entire site itself.
 
-Main logic:
+Highlights:
 
 -[Chess.com API Request](https://github.com/mcleeder/CodeSamples/blob/main/django_chessapp.md#chesscom-api-request)
 
