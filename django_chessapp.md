@@ -72,7 +72,7 @@ def json_to_game(json_obj):
 ```
 
 ### Beautiful Soup web scraper
-This is where this app gets started. It asks you for a month, year, and a username. It'll pull all the chess games on file at Chess.com for that user and store them locally. This is one of the first things I wrote in Python that really made me aware of just how quickly and easily you can get things running.
+Blurb...
 
 ```python
 def chess_news(request):
