@@ -57,3 +57,42 @@ My solution was to use a couple of fields. One to to indicate if we had a solved
 
 ### The checker
 
+```c#
+        private bool CanItBe(int y, int x, int n, int[,] board)
+        {
+            //check Y axis
+            for (int i = 0; i < 9; i++)
+            {
+                if (board[i,x] == n && i != y)
+                    return false;
+            }
+
+            //check X axis
+            for (int i = 0; i < 9; i++)
+            {
+                if (board[y,i] == n && i != x)
+                    return false;
+            }
+
+            //get x & y super columns
+            int gridY = 0;
+            int gridX = 0;
+
+            if (x > 2) gridX = 3;
+            if (x > 5) gridX = 6;
+
+            if (y > 2) gridY = 3;
+            if (y > 5) gridY = 6;
+
+            //3x3 square check using super coords as starting point
+            for (int i = gridY; i < gridY + 3; i++)
+            {
+                for (int j = gridX; j < gridX + 3; j++)
+                {
+                    if (board[i,j] == n && i != y && j != x)
+                        return false;
+                }
+            }
+            return true;
+        }
+```
