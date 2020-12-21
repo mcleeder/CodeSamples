@@ -166,3 +166,18 @@ chess_p = {
     '': """&nbsp;"""
 }
 ```
+
+The very last part was getting django to render the board. Again, just a loop inside a loop. And while reading the django docs looking for the |safe feature (that let me render the HTML as HTML) I found the feature that cycles the background color, which was fortunate because I didn't have a plan for that yet.
+
+```html
+        <table class="chess-table">
+          {% for row in game_board %}
+          <tr>
+            {% for cell in row %}
+            <td class="chess-cell {% cycle 'chess-w' 'chess-b' as rowcolors %}">{{ cell |safe }}</td>
+            {% endfor %}
+            <!-- {% cycle rowcolors %} -->
+            </tr>
+          {% endfor %}
+    </table>
+```
