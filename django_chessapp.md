@@ -167,10 +167,10 @@ chess_p = {
 }
 ```
 
-The very last part was getting django to render the board. Again, just a loop inside a loop. And while reading the django docs looking for the |safe feature (that let me render the HTML as HTML) I found the feature that cycles the background color, which was fortunate because I didn't have a plan for that yet.
+The very last part was getting django to render the board. Again, just a loop inside a loop. And while reading the django docs looking for the |safe feature (that let me render the HTML as HTML) I found the feature that cycles the background color, which was fortunate. There is some simple CSS doing the rest of the sizing and colors.
 
 ```html
-        <table class="chess-table">
+    <table class="chess-table">
           {% for row in game_board %}
           <tr>
             {% for cell in row %}
