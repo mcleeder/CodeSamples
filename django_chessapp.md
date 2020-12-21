@@ -20,5 +20,31 @@ Main logic:
 
 
 ```python
-
+def load_data(request):
+    # request method is POST
+    if request.method == 'POST':
+        form = GetGamesByPlayer(request.POST)
+        context = {'form': form}
+        if form.is_valid():
+            username = form['username'].value().strip()
+            year = form['year'].value()
+            month = form['month'].value()
+            lookup_string = "https://api.chess.com/pub/player/{}/games/{}/{}".format(username, year, month)
+            json_request = requests.get(lookup_string)
+            # if we find a user on chess.com
+            if json_request.status_code == requests.codes.ok:
+                json_games = json_request.json()
+                for game in json_games['games']:
+                    json_to_game(game).save()
+                load_status = "Loaded {} games.".format(len(json_games['games']))
+                context.update({"load_status": load_status})
+            # if no user found on chess.com
+            else:
+                load_status = "Username not found."
+                context.update({"load_status": load_status})
+        return render(request, "ChessApp/load_data.html", context)
+    # request method is GET
+    else:
+        form = GetGamesByPlayer
+        return render(request, "ChessApp/load_data.html", {'form': form})
 ```
