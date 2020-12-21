@@ -106,7 +106,9 @@ def chess_news(request):
 
 
 ### Chess game position render
-Blurb...
+The final position in a chess game is notated in something called [FEN](https://en.wikipedia.org/wiki/Forsyth%E2%80%93Edwards_Notation). It's a string of characters with letters representing the pieces and numbers indicating blank spaces.
+
+I had been staring at it for about a week when I finally decided to try to render it on the site. Two months prior, I had written [a Sudoku solver in C#](https://github.com/mcleeder/CodeSamples/blob/main/Sudoku_Solver.md) and had gotten pretty good at reading and writing to 2D arrays.
 
 ```python
 # map chess final position to list[][]
