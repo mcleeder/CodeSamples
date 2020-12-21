@@ -16,8 +16,7 @@ Main logic:
 
 
 ### Chess.com API Request
-
-
+This is where this app gets started. It asks you for a month, year, and a username. It'll pull all the chess games on file at Chess.com for that user and store them locally. This is one of the first things I wrote in Python that really made me aware of just how quickly and easily you can get things running.
 
 ```python
 def load_data(request):
@@ -47,4 +46,27 @@ def load_data(request):
     else:
         form = GetGamesByPlayer
         return render(request, "ChessApp/load_data.html", {'form': form})
+```
+
+This is a helper function that goes with the API request function above. All it does is translate the response data to the local ChessGame() model.
+
+```python
+# map a json file from chess.com to a ChessGame object
+def json_to_game(json_obj):
+    game = ChessGame()
+    game.id = json_obj['url'].split('/')[-1]
+    game.url = json_obj['url']
+    game.time_control = json_obj['time_control']
+    game.end_time = datetime.fromtimestamp(json_obj['end_time'])
+    game.rated = json_obj['rated']
+    game.fen = json_obj['fen']
+    game.time_class = json_obj['time_class']
+    game.rules = json_obj['rules']
+    game.white_player = json_obj['white']['username']
+    game.white_player_rating = json_obj['white']['rating']
+    game.white_player_result = json_obj['white']['result']
+    game.black_player = json_obj['black']['username']
+    game.black_player_rating = json_obj['black']['rating']
+    game.black_player_result = json_obj['black']['result']
+    return game
 ```
