@@ -103,3 +103,58 @@ def chess_news(request):
 
     return render(request, "ChessApp/chess_news.html", context)
 ```
+
+
+### Chess game position render
+Blurb...
+
+```python
+# map chess final position to list[][]
+# for display in template
+def render_final_position(fen):
+    def try_parse(c):
+        try:
+            return int(c), True
+        except ValueError:
+            return c, False
+
+    fens = fen.split(" ")[0].split("/")
+    board = [
+        ["", "", "", "", "", "", "", ""],
+        ["", "", "", "", "", "", "", ""],
+        ["", "", "", "", "", "", "", ""],
+        ["", "", "", "", "", "", "", ""],
+        ["", "", "", "", "", "", "", ""],
+        ["", "", "", "", "", "", "", ""],
+        ["", "", "", "", "", "", "", ""],
+        ["", "", "", "", "", "", "", ""]
+    ]
+    for y in range(0, 8):
+        index_c = 0
+        for x in fens[y]:
+            if not try_parse(x)[1]:
+                board[y][index_c] = chess_p[x]
+                index_c += 1
+            else:
+                board[y][index_c] = chess_p[""]
+                index_c += try_parse(x)[0]
+    return board
+```
+chess_p = {
+    'r': """<i class="fas fa-chess-rook text-dark"></i>""",
+    'R': """<i class="fas fa-chess-rook text-light"></i>""",
+    'n': """<i class="fas fa-chess-knight text-dark"></i>""",
+    'N': """<i class="fas fa-chess-knight text-light"></i>""",
+    'b': """<i class="fas fa-chess-bishop text-dark"></i>""",
+    'B': """<i class="fas fa-chess-bishop text-light"></i>""",
+    'k': """<i class="fas fa-chess-king text-dark"></i>""",
+    'K': """<i class="fas fa-chess-king text-light"></i>""",
+    'q': """<i class="fas fa-chess-queen text-dark"></i>""",
+    'Q': """<i class="fas fa-chess-queen text-light"></i>""",
+    'p': """<i class="fas fa-chess-pawn text-dark"></i>""",
+    'P': """<i class="fas fa-chess-pawn text-light"></i>""",
+    '': """&nbsp;"""
+}
+```python
+
+```
