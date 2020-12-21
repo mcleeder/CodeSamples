@@ -12,7 +12,3 @@ I've rearranged things a little bit to allow for more samples. Links are below.
 
 [Chess Fan Site](django_chessapp.md): At the end of my Python course in boot camp, I got to work with a team of developers on a Django web app. A web app in Django made as part of a larger collection. I worked with a group of developers for two weeks, being 2020, we worked remotely and used video chats for our scrums.
 
-
-## JavaScript Sample:
-
-JavaScript!
