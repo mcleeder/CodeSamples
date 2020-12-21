@@ -15,9 +15,9 @@ Back End:
 
 ### The solver
 
-This method is the main event. I learned most of this by watching a youtube video (in Python though). It came with a couple of challenges. The first was wrapping my head around recursion and what the heck is happening. Once I started to understand recursion, I realized that the method doesn't want to stop and wants to find every last solution. Not only that, but it cycles extra times as is spins down so if you just wait until the end, the board doesn't have a solution on it. So I had to figure out where to to pull out my solution.
+This method is the main event. I learned most of this by watching a youtube video (in Python though). It came with a couple of challenges. The first was wrapping my head around recursion and what the heck is happening. Once I started to understand recursion, I realized that the method doesn't want to stop and wants to find every last solution. Not only that, but it cycles extra times as is spins down so if you just wait until the end, the board doesn't have a solution on it. So I had to figure out where to to pull out my solved board.
 
-My solution was to use a couple of fields. One to to indicate if we had a solution, and one to hold the solution itself. The latter was necessry because the recurision will keep messing with the board as it spins down.
+My solution was to use a couple of fields. One to to indicate if we had a solved board, and one to hold the solution itself. The latter was necessry because the recurision will keep messing with the board as it spins down. The bool field tracking if I have a solution gets used at the top of the method to try to end the chain. It works, eventually. I think what is happening is that as the methods spin down, they exit and come back to the part where it tries numbers 1-9 and then still has to try the rest of the count before that instance can totally go away.
 
 
 ```c#
