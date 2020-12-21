@@ -11,7 +11,7 @@ Main logic:
 
 -[Chess.com API Request](https://github.com/mcleeder/CodeSamples/blob/main/django_chessapp.md#chesscom-api-request)
 
--[Beautiful Soup](https://github.com/mcleeder/CodeSamples/blob/main/Sudoku_Solver.md#Beautiful-Soup-web-scraper)
+-[Beautiful Soup](https://github.com/mcleeder/CodeSamples/blob/main/django_chessapp.md#Beautiful-Soup-web-scraper)
 
 
 
