@@ -59,7 +59,7 @@ My solution was to use a couple of fields. One to to indicate if we had a solved
 
 The second most important method. I am proud of how this one turned out. For a given number and sudoku board, it will tell you if that number is allowed in a given square. This final version is especially fancy because it can work with the back end Solver() checks, but also be used by the front end for validation. The main difference between those two checks being that in the back end, the square we're checking has a value of 0 and in the front that square has 1-9 in it. The solution to that pesky little problem was the realization that in both cases, we don't actually care what is in the square we're referencing. So I told it not to check that square.
 
-Pardon the method name, it was early and I know better now, leaving it as-is for posterity.
+Pardon the method name, it was early and I know better now, leaving it as-is for posterity. Mike from the future also realizes that there is an opportunity to get rid of a loop here, the X, Y axis checks can happen at the same time. Learning is fun.
 
 ```c#
         private bool CanItBe(int y, int x, int n, int[,] board)
