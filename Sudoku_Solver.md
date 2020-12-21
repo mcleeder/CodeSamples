@@ -5,7 +5,9 @@
 
 This was a side project of mine while I was learning C# at boot camp. At boot camp I always tried to have one project going on the side where I could try to apply what I was learning, or often just get ahead of the game. Boot camp moves so fast that I rarely had the chance to complete any of them, this is one of the rare ones that ended up as a finished product. It does need a 2.0 version though. There is room for improvement here.
 
-Back End:
+I'm only going to include the two main logic methods. The rest are generic MVC controllers or just things to translate back and forth from an array (front end) to a 2d array (back end logic).
+
+Main logic:
 
 -[The solver](https://github.com/mcleeder/CodeSamples/blob/main/README.md#the-solver)
 
