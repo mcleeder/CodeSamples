@@ -13,6 +13,7 @@ Main logic:
 
 -[Beautiful Soup](https://github.com/mcleeder/CodeSamples/blob/main/django_chessapp.md#Beautiful-Soup-web-scraper)
 
+-[Chess game position render](https://github.com/mcleeder/CodeSamples/blob/main/django_chessapp.md#chess-game-position-render)
 
 
 ### Chess.com API Request
