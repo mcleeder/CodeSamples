@@ -9,7 +9,7 @@ A lot of the coding was just setting up models and views in django. If you want 
 
 Main logic:
 
--[Chess.com API Request](https://github.com/mcleeder/CodeSamples/blob/main/django_chessapp.md#Chess.com-API-Request])
+-[Chess.com API Request](https://github.com/mcleeder/CodeSamples/blob/main/django_chessapp.md#Chess.com-API-Request)
 
 -[The checker](https://github.com/mcleeder/CodeSamples/blob/main/Sudoku_Solver.md#the-checker)
 
