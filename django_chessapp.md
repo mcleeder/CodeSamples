@@ -111,7 +111,7 @@ At Chess.com, the final position in a chess game is notated in something called 
 
 I had been staring at it for about a week when I finally decided to try to render it on the site. Two months prior, I had written [a Sudoku solver in C#](https://github.com/mcleeder/CodeSamples/blob/main/Sudoku_Solver.md) and had gotten pretty good at reading and writing to 2D arrays.
 
-This came with two main challenges. The first was that the string contains both letters and numbers, and you have to either record the letter, or skip forward a number of squares as indicated by a number. My first thought was of the int.tryparse() in C#, so I searched to see if python had one. It didn't, but it turns out you can make one very easily as it's just a function that returns a tuple. Hurray python.
+This came with two main challenges. The first was that the string contains both letters and numbers, and you have to either record the letter, or skip forward a number of squares as indicated by a number. My first thought was of the int.tryparse() in C#, so I searched to see if python had one. It didn't, but I learned that you can make one very easily as it's just a function that returns a tuple. Hurray python.
 
 The second challenge was just some head scratching about how to keep track of where the next piece should go. The solution there simply ended up being the index_c(ursor) variable. 
 
