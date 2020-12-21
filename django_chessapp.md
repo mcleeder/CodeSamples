@@ -75,4 +75,31 @@ def json_to_game(json_obj):
 This is where this app gets started. It asks you for a month, year, and a username. It'll pull all the chess games on file at Chess.com for that user and store them locally. This is one of the first things I wrote in Python that really made me aware of just how quickly and easily you can get things running.
 
 ```python
+def chess_news(request):
+    chess_com = requests.get("https://www.chess.com/news")
+    soup = BeautifulSoup(chess_com.text, 'html.parser')
+    content = []
+
+    for article in soup.find_all('article'):
+        headline = article.find('a', class_='post-preview-title').text.strip()
+        link = article.find('a', class_='post-preview-title')['href']
+        summary = article.find('p', class_="post-preview-excerpt").text.strip()
+        date_time = article.find('span', class_='post-preview-meta-content').span['title']
+        date_time = date_time.split(",")
+        date = f'{date_time[0]}, {date_time[1]}'
+        s_article = {
+            'headline': headline,
+            'link': link,
+            'summary': summary,
+            'date': date,
+        }
+        content.append(s_article)
+
+    paginator = Paginator(content, 6)
+    page_number = request.GET.get('page')
+    page_list = paginator.get_page(page_number)
+
+    context = {'context': page_list}
+
+    return render(request, "ChessApp/chess_news.html", context)
 ```
