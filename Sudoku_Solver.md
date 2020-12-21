@@ -9,9 +9,9 @@ I'm only going to include the two main logic methods. The rest are generic MVC c
 
 Main logic:
 
--[The solver](https://github.com/mcleeder/CodeSamples/blob/main/README.md#the-solver)
+-[The solver](https://github.com/mcleeder/CodeSamples/blob/main/Sudoku_Solver.md#the-solver)
 
--[The checker](https://github.com/mcleeder/CodeSamples/blob/main/README.md#admin-overlay)
+-[The checker](https://github.com/mcleeder/CodeSamples/blob/main/Sudoku_Solver.md#the-checker)
 
 
 
