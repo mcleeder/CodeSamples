@@ -147,7 +147,7 @@ def render_final_position(fen):
     return board
 ```
 
-This helps out the function above. Just here for clarity. These are Font-Awesome icons code.
+This helps out the function above. Just here for clarity. These are the Font-Awesome icon codes that get sent to the template for rendering.
 
 ```python
 chess_p = {
