@@ -7,18 +7,18 @@ At The Tech Academy, for the last two weeks in every language program we work in
 
 Back End:
 
--[Delete Users](https://github.com/mcleeder/CodeSamples/blob/main/README.md#delete-users)
+-[Delete Users](https://github.com/mcleeder/CodeSamples/blob/main/ASPNET_MVC_App.md#delete-users)
 
--[Admin Overlay](https://github.com/mcleeder/CodeSamples/blob/main/README.md#admin-overlay)
+-[Admin Overlay](https://github.com/mcleeder/CodeSamples/blob/main/ASPNET_MVC_App.md#admin-overlay)
 
 
 Front End:
 
--[Edit Users](https://github.com/mcleeder/CodeSamples/blob/main/README.md#edit-users)
+-[Edit Users](https://github.com/mcleeder/CodeSamples/blob/main/ASPNET_MVC_App.mdd#edit-users)
 
--[Templates View](https://github.com/mcleeder/CodeSamples/blob/main/README.md#templates-view)
+-[Templates View](https://github.com/mcleeder/CodeSamples/blob/main/ASPNET_MVC_App.md#templates-view)
 
--[Form Bug Fix](https://github.com/mcleeder/CodeSamples/blob/main/README.md#form-bug-fix)
+-[Form Bug Fix](https://github.com/mcleeder/CodeSamples/blob/main/ASPNET_MVC_App.md#form-bug-fix)
 
 ### Delete users
 
