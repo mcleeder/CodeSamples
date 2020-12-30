@@ -10,5 +10,5 @@ I've rearranged things a little bit to allow for more samples. Links are below.
 
 ## Python Sample:
 
-[Internship Project: Chess Fan Site](django_chessapp.md): This was a little sub-app I wrote with a team of developers working on a Django web app during an internship at Prosper IT Consulting. I worked with a group of developers for two weeks, being 2020, we worked remotely and used video chats for our scrums.
+[Internship Project: Chess Fan Site](https://github.com/mcleeder/ChessFanSite/blob/main/README.md#chessfansite): This was a little sub-app I wrote with a team of developers working on a Django web app during an internship at Prosper IT Consulting. I worked with a group of developers for two weeks, being 2020, we worked remotely and used video chats for our scrums.
 
